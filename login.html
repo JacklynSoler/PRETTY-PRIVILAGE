@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account | Pretty Privilege</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Montserrat", sans-serif;
+            color: #111;
+            background: #fff;
+        }
+
+        header {
+            height: 58px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .logo {
+        position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Bodoni Moda", serif;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    line-height: 1;
+    color: black;
+    text-decoration: none;
+    white-space: nowrap;
+        }
+
+        .account {
+            width: 450px;
+            max-width: calc(100% - 40px);
+            margin: 62px auto;
+        }
+
+        h1 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        input {
+            width: 100%;
+            height: 55px;
+            border: 1px solid #bbb;
+            padding: 0 13px;
+            font-family: inherit;
+            font-size: 13px;
+            margin-bottom: 17px;
+        }
+
+        button {
+            width: 100%;
+            height: 55px;
+            border: 1px solid #000;
+            background: #000;
+            color: #fff;
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #76213D;
+            border-color: #76213D;
+        }
+
+        .divider {
+            border: 0;
+            border-top: 1px solid #ddd;
+            margin: 52px 0;
+        }
+
+        .benefits-title {
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 26px;
+        }
+
+        .benefit {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 11px;
+            margin-bottom: 21px;
+            line-height: 1.6;
+        }
+
+        .benefit span {
+            font-size: 20px;
+            color: #76213D;
+        }
+
+        .back {
+            display: block;
+            margin-top: 30px;
+            text-align: center;
+            color: #76213D;
+            font-size: 11px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 500px) {
+            .account {
+                margin-top: 45px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html" class="logo">PRETTY PRIVILEGE</a>
+</header>
+
+<main class="account">
+
+    <h1>Enter your email</h1>
+
+    <form id="account-form">
+        <input
+            type="email"
+            id="email"
+            placeholder="E-mail address"
+            autocomplete="email"
+            required
+        >
+
+        <button type="submit">NEXT</button>
+    </form>
+
+    <hr class="divider">
+
+    <h2 class="benefits-title">
+        Enjoy a unique shopping experience with your personal account
+    </h2>
+
+    <div class="benefit">
+        <span>♧</span>
+        <p>Track your orders and returns</p>
+    </div>
+
+    <div class="benefit">
+        <span>♡</span>
+        <p>Save your favorite pieces to your wishlist</p>
+    </div>
+
+    <div class="benefit">
+        <span>□</span>
+        <p>Discover new collections and exclusive releases</p>
+    </div>
+
+    <div class="benefit">
+        <span>⌑</span>
+        <p>Receive personalized customer assistance</p>
+    </div>
+
+    <a href="index.html" class="back">BACK TO SHOP</a>
+
+</main>
+
+<script>
+    document.getElementById("account-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value;
+
+        alert("Welcome to Pretty Privilege! Connect an authentication service to continue with " + email + ".");
+    });
+</script>
+
+</body>
+</html>

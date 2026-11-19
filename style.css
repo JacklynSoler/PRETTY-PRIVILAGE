@@ -1,0 +1,789 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400&family=Montserrat:wght@400;500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400&family=Montserrat:wght@400;500&display=swap');
+@import url('https://googleapis.com');
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #ffffff;
+    color: #76213D;
+    
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.navbar {
+    width: 100%;
+    height: 65px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    
+      transition:
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        background-color 0.4s ease,
+        box-shadow 0.4s ease;
+
+    will-change: transform;
+}
+.navbar.nav-hidden {
+    transform: translateY(-100%);
+}
+
+.navbar.scrolled {
+    background-color: white;
+    
+}
+.navbar.scrolled .logo {
+    color: #76213D;
+}
+.navbar.scrolled .nav-icon {
+    color: #76213D;
+}
+/* HIDE MENU AND SEARCH WORDS ON SMALLER SCREENS */
+@media screen and (max-width: 760px) {
+    .icon-label {
+        display: none;
+    }
+}.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-link {
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: black;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.navbar.scrolled .contact-link {
+    color: #76213D;
+}
+
+@media screen and (max-width: 760px) {
+    .contact-link {
+        display: none;
+    }
+}
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Bodoni Moda", serif;
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    line-height: 1;
+    color: black;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Smaller screens */
+@media screen and (max-width: 760px) {
+    .logo {
+        font-size: 19px;
+    }
+}
+
+
+/* =========================================
+   NAVIGATION ICONS
+========================================= */
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+  background: transparent;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+      flex: 0 0 auto;
+    flex-shrink: 0;
+}
+
+.nav-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.icon-label {
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: black;
+}
+/* =========================================
+   SCROLLED WHITE NAVBAR STATE COLORS
+========================================= */
+.navbar.scrolled .nav-icon {
+  color: #76213D;
+}
+
+.navbar.scrolled .icon-label {
+  color: #76213D; 
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+main {
+    background-color: #ffffff;
+
+    padding: 0;
+}
+
+/* =========================================
+   hero/CONTENT BLOCK
+========================================= */
+
+.content-block {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+    margin: 0;
+}
+
+/* HERO IMAGE */
+.hero-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    top: 0;
+    left: 0;
+     display: flex;
+}
+
+/* BUTTON IN THE MIDDLE */
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transition: top 0.4s ease;
+
+}
+
+.shop-button {
+    display: inline-block;
+    position: relative;
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 5px 0;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+/* Line already visible */
+.shop-button::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    transition: width 0.4s ease;
+}
+
+/* Line moves away when hovering */
+.shop-button:hover::after {
+    width: 0;
+}
+/* =========================================
+   SLIMMER SCREENS RESPONSIVE BREAKPOINT
+========================================= */
+@media (max-width: 1520px) {
+    .hero-overlay {
+        top: 70%;
+    }
+}
+
+ /* =========================================
+4 content block new arrivals
+========================================= */
+.shop-category {
+padding: 40px 0;
+    background: transparent;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    
+}
+
+.category-title {
+  text-align: center;
+  color: #76213D;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+padding: 20;
+  margin: 0px;
+}
+
+.hero-statement {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: #76213D;
+    text-align: center;
+    max-width: 650px;
+    letter-spacing: 0.3px;
+    margin: 15px auto 60px;
+    line-height: 1.4;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0px 2px;
+  width: 100%;
+}
+
+.category-item {
+  display: block;
+  min-width: 0;
+  color: #76213D;
+  text-decoration: none;
+}
+
+.category-image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: transparent;
+}
+
+.category-image img {
+     display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+
+.category-item h3 {
+  margin: 18px 0 15px;
+    padding: 0;
+    background: transparent;
+    color: #76213D;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+
+/* Tablet */
+@media (max-width: 768px) {
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+ /* =========================================
+  giant banner
+========================================= */
+.hero-slider {
+    width: 100%;
+    height: 650px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Mobile size */
+@media (max-width: 768px) {
+    .hero-slider {
+        height: 450px;
+    }
+}
+ /* =========================================
+  BAG AND HEEL COLLECTIONS
+========================================= */
+.collections {
+   padding: 0px 0;
+}
+
+.collection-section {
+  margin-bottom: 45px;
+}
+
+.collection-banner {
+    width: 100%;
+  position: relative;
+  left: 0%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  height: 45vh;
+  min-height: 400px;
+}
+
+.collection-banner img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: opacity 0.4s ease;
+}
+
+.collection-title {
+  text-align: center;
+  color: #76213D;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 60px 0 2px;
+  padding: 20px 25px;
+}
+
+/* Four bag products in one row */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2px;
+  width: 100%;
+  max-width: 2400px; 
+  margin: 10px auto; 
+  margin-bottom: 100px;
+}
+
+.product-card {
+  min-width: 0;
+}
+
+.product-card > img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+/* Transparent information box */
+.product-info {
+  text-align: center;
+  padding: 12px 5px;
+  color: #76213D;
+}
+
+.product-info h3 {
+  margin: 0 0 7px;
+  font-family: "Bodoni Moda", serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.product-info p {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 12px;
+  }
+
+  .collection-banner {
+    height: 55vh;
+    min-height: 300px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .collections {
+    padding: 12px;
+  }
+
+  .collection-title {
+    font-size: 22px;
+  }
+
+  .product-info h3 {
+    font-size: 13px;
+  }
+}
+/* =========================================
+  pre collection
+========================================= */
+.pre-collection {
+  width: 100%;
+  padding: 30px 20px 70px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.pre-collection-image {
+  width: 100%;
+  height: 100vh;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.pre-collection-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.pre-collection-content {
+  padding: 30px 15px 0;
+  background: transparent;
+}
+
+.pre-collection-label {
+  color: #76213D;
+  font-size: 11px;
+  letter-spacing: 3px;
+  margin: 0 0 14px;
+}
+
+.pre-collection-content h2 {
+  color: #76213D;
+  font-family: "Bodoni Moda", serif;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0 0 25px;
+}
+
+.pre-order-button {
+  display: inline-block;
+  padding: 14px 30px;
+  border: 1px solid #76213D;
+  background: transparent;
+  color: #76213D;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.pre-order-button:hover {
+  background: #76213D;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .pre-collection {
+    padding: 20px 12px 45px;
+  }
+
+  .pre-collection-image {
+    height: 55vh;
+    min-height: 300px;
+  }
+
+  .pre-collection-content h2 {
+    font-size: 25px;
+  }
+
+  .pre-order-button {
+    padding: 12px 22px;
+  }
+}
+
+/* =========================================
+   PRETTY PRIVILEGE FOOTER
+========================================= */
+
+.pp-footer {
+    width: 100%;
+    margin: 0;
+    padding: 0 2.6% 24px;
+    box-sizing: border-box;
+    background: #ffffff;
+    color: #222222;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Back to top */
+.pp-back-top {
+    height: 110px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-top: 38px;
+    box-sizing: border-box;
+}
+
+.pp-back-top a {
+    color: #222222;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.pp-back-top a:hover {
+    color: #76213D;
+}
+
+/* Six-column footer layout */
+.pp-footer-layout {
+    display: grid;
+    grid-template-columns: 2.5fr
+        0.9fr 0.9fr 0.9fr 1fr 0.8fr;
+    gap: 32px;
+    padding-top: 18px;
+    padding-bottom: 60px;
+    align-items: start;
+}
+
+/* Newsletter */
+.pp-newsletter h3,
+.pp-footer-column h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0 0 24px;
+    letter-spacing: 0.1px;
+}
+
+.pp-newsletter p {
+    max-width: 300px;
+    font-size: 11px;
+    line-height: 1.8;
+    color: #555555;
+    margin: 0 0 28px;
+}
+
+.pp-email-field {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 330px;
+    border-bottom: 1px solid #888888;
+}
+
+.pp-email-field input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    padding: 12px 0 10px;
+    background: transparent;
+    color: #222222;
+    font: inherit;
+    font-size: 12px;
+}
+
+.pp-email-field input::placeholder {
+    color: #888888;
+    letter-spacing: 1px;
+}
+
+.pp-email-field button {
+    border: none;
+    background: transparent;
+    color: #76213D;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+/* Link columns */
+.pp-footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 23px;
+    min-width: 0;
+}
+
+.pp-footer-column h3 {
+    margin-bottom: 0;
+    white-space: nowrap;
+}
+
+.pp-footer-column a {
+    color: #292929;
+    text-decoration: none;
+    font-size: 11px;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+    transition: color 0.25s ease;
+}
+
+.pp-footer-column a:hover {
+    color: #76213D;
+}
+
+/* Contact area */
+.pp-footer-column .pp-download-heading {
+    margin-top: 24px;
+}
+
+/* Bottom brand row */
+.pp-footer-bottom {
+    border-top: 1px solid #e5e5e5;
+    padding-top: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.pp-footer-logo {
+    color: #76213D;
+    font-family: "Bodoni Moda", serif;
+    font-size: 19px;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.pp-footer-bottom p {
+    color: #666666;
+    font-size: 9px;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+    .pp-footer-layout {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 40px 28px;
+    }
+
+    .pp-newsletter {
+        grid-column: span 3;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .pp-footer {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .pp-back-top {
+        height: 80px;
+        padding-top: 28px;
+    }
+
+    .pp-footer-layout {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 38px 20px;
+        padding-top: 10px;
+        padding-bottom: 40px;
+    }
+
+    .pp-newsletter {
+        grid-column: span 2;
+    }
+
+    .pp-footer-column {
+        gap: 17px;
+    }
+
+    .pp-footer-column h3 {
+        white-space: normal;
+    }
+
+    .pp-footer-column a {
+        font-size: 11px;
+    }
+
+    .pp-footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
